@@ -10,8 +10,19 @@ export default class ProductList extends React.Component {
   }
 
   render() {
+    const productsListArray = this.state.products;
     return (
-      <ProductListItem/>
+      productsListArray.map(product => {
+        return (
+          <ProductListItem
+            key={''}
+            productImage={'./images/shake-weight.jpg'}
+            productName={'Product Name'}
+            productPrice={'$1.00'}
+            productDescription={'Short description of the product goes here.'}
+          />
+        );
+      })
     );
   }
 }
