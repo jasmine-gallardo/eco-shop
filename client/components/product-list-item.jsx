@@ -7,11 +7,11 @@ export default function ProductListItem(props) {
   const productDescription = props.productDescription;
 
   return (
-    <div className="card">
-      <img className="card-img-top" src={productImage} alt="shake-weight"/>
-      <div className="card-body">
+    <div className="card col-3 m-2">
+      <img className="card-img-top" src={productImage}/>
+      <div className="card-body p-2">
         <h5 className="card-title">{productName}</h5>
-        <p>{productPrice}</p>
+        <p className="text-muted">{productPrice}</p>
         <p className="card-text">{productDescription}</p>
       </div>
     </div>

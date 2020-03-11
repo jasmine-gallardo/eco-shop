@@ -14,7 +14,11 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <ProductList/>
+        <div className="container">
+          <div className="row pt-4 pb-4 justify-content-center">
+            <ProductList />
+          </div>
+        </div>
       </div>
     );
   }

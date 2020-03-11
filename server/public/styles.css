@@ -1,8 +1,4 @@
-.card {
-  width: 18rem;
-}
-
 .card-img-top {
-  height: 16rem;
+  height: 10rem;
   object-fit: contain;
 }
