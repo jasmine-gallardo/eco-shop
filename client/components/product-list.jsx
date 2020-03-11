@@ -7,6 +7,11 @@ export default class ProductList extends React.Component {
     this.state = {
       products: []
     };
+    this.getProducts = this.getProducts.bind(this);
+  }
+
+  componentDidMount() {
+    this.getProducts();
   }
 
   getProducts() {
@@ -22,7 +27,7 @@ export default class ProductList extends React.Component {
       productsListArray.map(product => {
         return (
           <ProductListItem
-            key={product.id}
+            key={product.name}
             productImage={product.image}
             productName={product.name}
             productPrice={product.price}
