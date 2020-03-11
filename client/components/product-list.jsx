@@ -22,6 +22,7 @@ export default class ProductList extends React.Component {
   }
 
   render() {
+    const setViewProp = this.props.setViewProp;
     const productsListArray = this.state.products;
     return (
       productsListArray.map(product => {
@@ -32,6 +33,7 @@ export default class ProductList extends React.Component {
             productName={product.name}
             productPrice={`$${product.price}`}
             productDescription={product.shortDescription}
+            setViewProp={setViewProp}
           />
         );
       })
