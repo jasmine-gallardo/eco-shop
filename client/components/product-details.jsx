@@ -21,6 +21,20 @@ export default class ProductDetails extends React.Component {
   }
 
   render() {
+    if (this.componentDidMount) {
+      return (
+        <div className="container">
+          <p> &lt; Back to Catalog</p>
+          <div className="row">
+            <img className="col-2"src="server/public/images/ostrich-pillow.jpg"></img>
+            <div className="col-2">Product Name/Price/ShortDescr.</div>
+          </div>
+          <div>
+            <p>Long Description</p>
+          </div>
+        </div>
+      );
+    }
     return (
       null
     );
