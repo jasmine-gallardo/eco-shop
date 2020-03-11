@@ -13,9 +13,10 @@ export default class ProductDetails extends React.Component {
     this.getProductDetails();
   }
 
-  getProductDetails(productId) {
-    fetch(`/api/products/${productId}`)
-      .then(result => result.status(200).json(result.rows[0]))
+  getProductDetails() {
+    fetch('/api/products/1')
+      .then(res => res.json())
+      .then(result => console.log(result))
       .catch(err => console.err(err));
   }
 
