@@ -21,7 +21,7 @@ export default class ProductDetails extends React.Component {
   }
 
   render() {
-    if (this.componentDidMount) {
+    if (this.state.product) {
       return (
         <div className="container">
           <p> &lt; Back to Catalog</p>
