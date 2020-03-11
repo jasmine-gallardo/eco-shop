@@ -27,10 +27,10 @@ export default class ProductList extends React.Component {
       productsListArray.map(product => {
         return (
           <ProductListItem
-            key={product.name}
+            key={product.productId}
             productImage={product.image}
             productName={product.name}
-            productPrice={product.price}
+            productPrice={`$${product.price}`}
             productDescription={product.shortDescription}
           />
         );
