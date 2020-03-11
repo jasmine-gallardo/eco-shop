@@ -5,12 +5,12 @@ export default class ProductDetails extends React.Component {
     super(props);
     this.state = {
       product: null
-    }
+    };
     this.getProductDetails = this.getProductDetails.bind(this);
   }
 
   componentDidMount() {
-   this.getProductDetails();
+    this.getProductDetails();
   }
 
   getProductDetails(productId) {
@@ -19,7 +19,7 @@ export default class ProductDetails extends React.Component {
       .catch(err => console.err(err));
   }
 
-  render () {
+  render() {
     return (
       null
     );
