@@ -18,18 +18,34 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <Header />
-        <div className="container">
-          <div className="row pt-4 pb-4 justify-content-center">
-            <ProductList
-              view={this.state.view}
-              setViewProp={this.setView}/>
-            <ProductDetails/>
+    if (this.state.view.name === 'catalog') {
+      return (
+        <div>
+          <Header />
+          <div className="container">
+            <div className="row pt-4 pb-4 justify-content-center">
+              <ProductList
+                view={this.state.view}
+                setViewProp={this.setView} />
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else if (this.state.view.name === 'details') {
+      return (
+        <div>
+          <Header />
+          <div className="container">
+            <div className="row pt-4 pb-4 justify-content-center">
+              <ProductDetails
+                params={this.state.view.params}
+                setViewProp={this.setView}/>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+
   }
 }
