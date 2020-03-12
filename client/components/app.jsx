@@ -13,39 +13,30 @@ export default class App extends React.Component {
   }
 
   setView(name, params) {
-    console.log('hi');
-    this.setState({ name: name, params: params })
+    this.setState({
+      view: { name, params }
+    });
   }
 
   render() {
-    if (this.state.view.name === 'catalog') {
-      return (
-        <div>
-          <Header />
-          <div className="container">
-            <div className="row pt-4 pb-4 justify-content-center">
-              <ProductList
-                view={this.state.view}
-                setViewProp={this.setView} />
-            </div>
-          </div>
-        </div>
-      );
-    } else if (this.state.view.name === 'details') {
-      return (
-        <div>
-          <Header />
-          <div className="container">
-            <div className="row pt-4 pb-4 justify-content-center">
-              <ProductDetails
-                params={this.state.view.params}
-                setViewProp={this.setView}/>
-            </div>
-          </div>
-        </div>
-      )
+    let view;
+    switch (this.state.view.name) {
+      case 'catalog': view =
+      <ProductList view={this.state.view} setViewProp={this.setView} />
+        break;
+      case 'details': view =
+        <ProductDetails params={this.state.view.params} setViewProp={this.setView} />
+        break;
     }
-
-
+    return (
+      <div>
+        <Header />
+        <div className="container">
+          <div className="row pt-4 pb-4 justify-content-center">
+            {view}
+          </div>
+        </div>
+      </div>
+    );
   }
 }

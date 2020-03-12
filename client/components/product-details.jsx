@@ -7,7 +7,6 @@ export default class ProductDetails extends React.Component {
       product: null
     };
     this.getProductDetails = this.getProductDetails.bind(this);
-    console.log(props)
   }
 
   componentDidMount() {
@@ -15,7 +14,8 @@ export default class ProductDetails extends React.Component {
   }
 
   getProductDetails() {
-    fetch(`/api/products/${props.params}`)
+    const productId = this.props.params.productId;
+    fetch(`/api/products/${productId}`)
       .then(res => res.json())
       .then(result => this.setState({ product: result}))
       .catch(err => console.err(err));
@@ -23,10 +23,11 @@ export default class ProductDetails extends React.Component {
 
   render() {
     const product = this.state.product;
+    const setViewProp = this.props.setViewProp;
     if (product) {
       return (
         <div className="container">
-          <p> &lt; Back to Catalog</p>
+          <p onClick={() => setViewProp('catalog', {})}> &lt; Back to Catalog</p>
           <div className="row justify-content-center">
             <img className="col-5"src={product.image}></img>
             <div className="col-6">
