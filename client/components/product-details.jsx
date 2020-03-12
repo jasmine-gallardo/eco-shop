@@ -28,12 +28,14 @@ export default class ProductDetails extends React.Component {
       return (
         <div className="container">
           <p onClick={() => setViewProp('catalog', {})}> &lt; Back to Catalog</p>
-          <div className="row justify-content-center">
-            <img className="col-5"src={product.image}></img>
+          <div className="row justify-content-center mt-4 mb-4">
+            <div className="col-5">
+              <img src={product.image}></img>
+            </div>
             <div className="col-6">
-              <div>{product.name}</div>
-              <div>{product.price}</div>
-              <div>{product.shortDescription}</div>
+              <h3>{product.name}</h3>
+              <p className="text-muted">{`$${product.price}`}</p>
+              <p>{product.shortDescription}</p>
             </div>
           </div>
           <div>
