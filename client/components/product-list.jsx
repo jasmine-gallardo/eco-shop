@@ -22,16 +22,19 @@ export default class ProductList extends React.Component {
   }
 
   render() {
+    const setViewProp = this.props.setViewProp;
     const productsListArray = this.state.products;
     return (
       productsListArray.map(product => {
         return (
           <ProductListItem
             key={product.productId}
+            productId={product.productId}
             productImage={product.image}
             productName={product.name}
             productPrice={`$${product.price}`}
             productDescription={product.shortDescription}
+            setViewProp={setViewProp}
           />
         );
       })
