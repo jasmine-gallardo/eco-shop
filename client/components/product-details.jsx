@@ -15,7 +15,7 @@ export default class ProductDetails extends React.Component {
   }
 
   getProductDetails() {
-    fetch('/api/products/1')
+    fetch(`/api/products/${props.params}`)
       .then(res => res.json())
       .then(result => this.setState({ product: result}))
       .catch(err => console.err(err));
