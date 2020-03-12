@@ -7,6 +7,7 @@ export default class ProductDetails extends React.Component {
       product: null
     };
     this.getProductDetails = this.getProductDetails.bind(this);
+    console.log(props)
   }
 
   componentDidMount() {
@@ -16,21 +17,26 @@ export default class ProductDetails extends React.Component {
   getProductDetails() {
     fetch('/api/products/1')
       .then(res => res.json())
-      .then(result => console.log(result))
+      .then(result => this.setState({ product: result}))
       .catch(err => console.err(err));
   }
 
   render() {
-    if (this.state.product) {
+    const product = this.state.product;
+    if (product) {
       return (
         <div className="container">
           <p> &lt; Back to Catalog</p>
-          <div className="row">
-            <img className="col-2"src="server/public/images/ostrich-pillow.jpg"></img>
-            <div className="col-2">Product Name/Price/ShortDescr.</div>
+          <div className="row justify-content-center">
+            <img className="col-5"src={product.image}></img>
+            <div className="col-6">
+              <div>{product.name}</div>
+              <div>{product.price}</div>
+              <div>{product.shortDescription}</div>
+            </div>
           </div>
           <div>
-            <p>Long Description</p>
+            <p>{product.longDescription}</p>
           </div>
         </div>
       );
