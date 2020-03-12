@@ -58,6 +58,45 @@ app.get('/api/cart', (req, res, next) => {
   return res.status(200).json({});
 });
 
+app.post('/api/cart', (req, res, next) => {
+  const productId = req.body.productId;
+
+  if (!parseInt(productId, 10)) {
+    return res.status(400).json({ error: 'invalid productId' });
+  }
+
+  const sql = `
+    select "price"
+      from "products"
+    where "productId" = $1
+    `;
+
+  const values = [productId];
+
+  db.query(sql, values)
+    .then(result => {
+      const price = result.rows[0].price;
+      const sql = `
+        insert into "carts" ("cartId", "createdAt")
+        values (default, default)
+        returning "cartId"
+      `;
+      if (!result.rows.length === 0) {
+        return (next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404)));
+      }
+      return (
+        db.query(sql)
+          .then(result => {
+            const cartId = result.rows;
+            return { cartId, price };
+          })
+      );
+    })
+    .then()
+    .then()
+    .catch(err => next(err));
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
