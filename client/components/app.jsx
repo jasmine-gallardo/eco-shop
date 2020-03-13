@@ -7,15 +7,27 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'catalog', params: {} }
+      view: { name: 'catalog', params: {} },
+      cart: []
     };
     this.setView = this.setView.bind(this);
+  }
+
+  componentDidMount() {
+    this.getCartItems();
   }
 
   setView(name, params) {
     this.setState({
       view: { name, params }
     });
+  }
+
+  getCartItems() {  //takes in productId?
+    fetch('/api/cart')
+      .then(res => res.json())
+      .then(cartItemsResult => this.setState({ cart: cartItemsResult}))
+      .catch(err => console.error(err));
   }
 
   render() {
