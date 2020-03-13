@@ -115,6 +115,7 @@ app.post('/api/cart', (req, res, next) => {
       );
     })
     .then(result => {
+      const cartItemId = result.cartItemId;
       const sql = `
         select "c"."cartItemId",
               "c"."price",
@@ -126,6 +127,10 @@ app.post('/api/cart', (req, res, next) => {
           join "products" as "p" using ("productId")
         where "c"."cartItemId" = $1
       `;
+
+      const values = [cartItemId];
+      db.query(sql, values)
+        .then(result => res.status(201).json(result.rows[0]))
     })
     .catch(err => next(err));
 });
