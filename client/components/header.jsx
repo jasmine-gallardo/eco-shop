@@ -3,7 +3,6 @@ import React from 'react';
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props)
     const cartItemCount = this.props.cartItemCount.length
   }
   render() {
@@ -15,7 +14,7 @@ export default class Header extends React.Component {
             <h2 className="d-inline-block">Wicked Sales</h2>
           </div>
           <div className="col d-flex justify-content-center align-items-center">
-            <p className="m-2">0 Items</p>
+            <p className="m-2">{cartItemCount}</p>
             <i className="fas fa-shopping-cart fa-2x"></i>
           </div>
         </header>
