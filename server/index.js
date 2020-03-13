@@ -73,7 +73,8 @@ app.get('/api/cart', (req, res, next) => {
     const values = [cartId];
 
     db.query(sql, values)
-      .then(result => res.status(200).json(result.rows));
+      .then(result => res.status(200).json(result.rows))
+      .catch(err => next(err));
   }
 });
 
@@ -101,7 +102,7 @@ app.post('/api/cart', (req, res, next) => {
         returning "cartId"
       `;
       if (!result.rows.length === 0) {
-        return (next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404)));
+        return (new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
       }
 
       if (req.session.cartId) {
@@ -154,12 +155,14 @@ app.post('/api/cart', (req, res, next) => {
           join "products" as "p" using ("productId")
         where "c"."cartItemId" = $1
       `;
-
       const values = [cartItemId];
-      db.query(sql, values)
-        .then(result => res.status(201).json(result.rows[0]));
-    })
-    .catch(err => next(err));
+
+      return (
+        db.query(sql, values)
+          .then(result => res.status(201).json(result.rows[0]));
+      })
+      .catch(err => next(err));
+      );
 });
 
 app.use('/api', (req, res, next) => {
