@@ -42,7 +42,7 @@ export default class App extends React.Component {
     }
     return (
       <div>
-        <Header />
+        <Header cartItemCount={this.state.cart}/>
         <div className="container">
           <div className="row pt-4 pb-4 justify-content-center">
             {view}
