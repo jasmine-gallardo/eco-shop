@@ -87,13 +87,34 @@ app.post('/api/cart', (req, res, next) => {
       return (
         db.query(sql)
           .then(result => {
-            const cartId = result.rows;
-            return { cartId, price };
+            const productInfo = result.rows;
+            return { productInfo, price };
           })
       );
     })
-    .then()
-    .then()
+    .then(result => {
+      const productId = req.body.productId;
+      const price = result.price;
+      const cartIdResult = result.productInfo[0].cartId;
+      req.session.cartId = cartIdResult
+
+      const sql = `
+        insert into "cartItems" ("cartId", "productId", "price")
+        values ($1, $2, $3)
+        returning "cartItemId"
+      `;
+
+      const values = [cartIdResult, productId, price];
+
+      return (
+        db.query(sql, values)
+          .then(result => {
+            const cartItemId = result.rows[0];
+            return cartItemId
+          })
+      );
+    })
+    .then(result => console.log(result))
     .catch(err => next(err));
 });
 
