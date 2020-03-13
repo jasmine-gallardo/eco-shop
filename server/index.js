@@ -114,7 +114,19 @@ app.post('/api/cart', (req, res, next) => {
           })
       );
     })
-    .then(result => console.log(result))
+    .then(result => {
+      const sql = `
+        select "c"."cartItemId",
+              "c"."price",
+              "p"."productId",
+              "p"."image",
+              "p"."name",
+              "p"."shortDescription"
+          from "cartItems" as "c"
+          join "products" as "p" using ("productId")
+        where "c"."cartItemId" = $1
+      `;
+    })
     .catch(err => next(err));
 });
 
