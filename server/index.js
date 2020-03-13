@@ -84,18 +84,26 @@ app.post('/api/cart', (req, res, next) => {
       if (!result.rows.length === 0) {
         return (next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404)));
       }
-      return (
-        db.query(sql)
-          .then(result => {
-            const productInfo = result.rows;
-            return { productInfo, price };
-          })
-      );
+
+      if (req.session.cartId) {
+        const cartId = req.session.cartId;
+        const queriedCartId = [{cartId: cartId}];
+        return {queriedCartId, price};
+      } else {
+        return (
+          db.query(sql)
+            .then(result => {
+              const queriedCartId = result.rows;
+              return { queriedCartId, price };
+            })
+        );
+      }
+
     })
     .then(result => {
       const productId = req.body.productId;
       const price = result.price;
-      const cartIdResult = result.productInfo[0].cartId;
+      const cartIdResult = result.queriedCartId[0].cartId;
       req.session.cartId = cartIdResult;
 
       const sql = `
