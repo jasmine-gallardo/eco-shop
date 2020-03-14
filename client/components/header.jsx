@@ -3,9 +3,9 @@ import React from 'react';
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-    const cartItemCount = this.props.cartItemCount.length
   }
   render() {
+    const cartItemCount = this.props.cartItemCount.length
     return (
       <div className="container">
         <header className="row p-2 bg-dark text-white">
@@ -14,7 +14,7 @@ export default class Header extends React.Component {
             <h2 className="d-inline-block">Wicked Sales</h2>
           </div>
           <div className="col d-flex justify-content-center align-items-center">
-            <p className="m-2">{cartItemCount}</p>
+            <p className="m-2">{ `${cartItemCount} items` }</p>
             <i className="fas fa-shopping-cart fa-2x"></i>
           </div>
         </header>

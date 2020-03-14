@@ -36,6 +36,9 @@ export default class ProductDetails extends React.Component {
               <h3>{product.name}</h3>
               <p className="text-muted">{`$${product.price}`}</p>
               <p>{product.shortDescription}</p>
+              <div>
+                <button className="btn btn-primary p-2">Add to Cart</button>
+              </div>
             </div>
           </div>
           <div>
