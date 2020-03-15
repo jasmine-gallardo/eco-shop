@@ -24,6 +24,7 @@ export default class ProductDetails extends React.Component {
   render() {
     const product = this.state.product;
     const setViewProp = this.props.setViewProp;
+    const addToCart = this.props.addToCart;
     if (product) {
       return (
         <div className="container">
@@ -34,8 +35,11 @@ export default class ProductDetails extends React.Component {
             </div>
             <div className="col-6">
               <h3>{product.name}</h3>
-              <p className="text-muted">{`$${product.price}`}</p>
+              <p className="text-muted">{`$${(product.price / 100).toFixed(2)}`}</p>
               <p>{product.shortDescription}</p>
+              <div>
+                <button onClick={() => addToCart(product)} className="btn btn-primary p-2">Add to Cart</button>
+              </div>
             </div>
           </div>
           <div>

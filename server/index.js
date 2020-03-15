@@ -102,7 +102,7 @@ app.post('/api/cart', (req, res, next) => {
         returning "cartId"
       `;
       if (!result.rows.length === 0) {
-        return (throw new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
+          throw new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404);
       }
 
       if (req.session.cartId) {
@@ -159,7 +159,7 @@ app.post('/api/cart', (req, res, next) => {
 
       return (
         db.query(sql, values)
-          .then(result => res.status(201).json(result.rows[0]));
+          .then(result => res.status(201).json(result.rows[0]))
       );
     })
     .catch (err => next(err));

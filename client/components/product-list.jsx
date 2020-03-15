@@ -32,7 +32,7 @@ export default class ProductList extends React.Component {
             productId={product.productId}
             productImage={product.image}
             productName={product.name}
-            productPrice={`$${product.price}`}
+            productPrice={`$${(product.price / 100).toFixed(2)}`}
             productDescription={product.shortDescription}
             setViewProp={setViewProp}
           />
