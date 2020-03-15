@@ -11,6 +11,7 @@ export default class App extends React.Component {
       cart: []
     };
     this.setView = this.setView.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidMount() {
@@ -23,10 +24,10 @@ export default class App extends React.Component {
     });
   }
 
-  getCartItems() {  //takes in productId?
+  getCartItems() {
     fetch('/api/cart')
       .then(res => res.json())
-      .then(cartItemsResult => this.setState({ cart: cartItemsResult}))
+      .then(cartItemsResult => this.setState({ cart: cartItemsResult }))
       .catch(err => console.error(err));
   }
 
@@ -38,7 +39,10 @@ export default class App extends React.Component {
     }
     fetch('/api/cart', req)
       .then(res => res.json())
-      .then( allCartItemsArray => this.setState({ cart: allCartItemsArray }))
+      .then( allCartItemsArray => {
+          this.setState({ cart: allCartItemsArray });
+          this.getCartItems();
+      })
       .catch(err => console.error(err));
   }
 
@@ -49,12 +53,13 @@ export default class App extends React.Component {
       <ProductList view={this.state.view} setViewProp={this.setView} />
         break;
       case 'details': view =
-        <ProductDetails params={this.state.view.params} setViewProp={this.setView} />
+        <ProductDetails
+          params={this.state.view.params} setViewProp={this.setView} addToCart={this.addToCart}/>
         break;
     }
     return (
       <div>
-        <Header cartItemCount={this.state.cart}/>
+        <Header cartItemCount={this.state.cart.length}/>
         <div className="container">
           <div className="row pt-4 pb-4 justify-content-center">
             {view}

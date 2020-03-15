@@ -5,7 +5,7 @@ export default class Header extends React.Component {
     super(props);
   }
   render() {
-    const cartItemCount = this.props.cartItemCount.length
+    const cartItemCount = this.props.cartItemCount
     return (
       <div className="container">
         <header className="row p-2 bg-dark text-white">
@@ -19,7 +19,6 @@ export default class Header extends React.Component {
           </div>
         </header>
       </div>
-
     );
   }
 }
