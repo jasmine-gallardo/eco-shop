@@ -39,9 +39,9 @@ export default class App extends React.Component {
     }
     fetch('/api/cart', req)
       .then(res => res.json())
-      .then( allCartItemsArray => {
-          this.setState({ cart: allCartItemsArray });
-          this.getCartItems();
+      .then( newCartItem => {
+        const allCartItemsArray = this.state.cart.concat(newCartItem);
+        this.setState({ cart: allCartItemsArray });
       })
       .catch(err => console.error(err));
   }
