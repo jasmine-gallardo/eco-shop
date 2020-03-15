@@ -1,4 +1,5 @@
-.card-img-top {
+.card-img-top,
+.cart-item-img {
   height: 10rem;
   object-fit: contain;
 }
