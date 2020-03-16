@@ -54,6 +54,10 @@ export default class App extends React.Component {
       body: JSON.stringify(object)
     }
     fetch('/api/orders', req)
+      .then(res => res.json())
+      .then(order => this.setState({ cart: [] }))
+      .then(result => this.setView('catalog', {}))
+      .catch(err => console.err(err));
   }
 
   render() {
