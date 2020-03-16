@@ -57,27 +57,47 @@ export default class CheckoutForm extends React.Component {
     const name = this.state.name;
     const creditCard = this.state.creditCard;
     const shippingAddress = this.state.shippingAddress;
+    if (this.props.cart.length === 0) {
+      return (
+        <div>
+          <p>There are no items in your cart.</p>
+        </div>
+      );
+    }
+    const cartArrayCopy = this.props.cart.map(product => product.price);
+    const itemTotalReduce = cartArrayCopy.reduce((acc, curr) => acc + curr);
+    const itemTotal = (itemTotalReduce / 100).toFixed(2);
     return (
-      <div>
-        <h2>Checkout</h2>
-        <p>Order Total: $20.00</p>
+      <div className="w-75">
+        <h2 className="mb-3">Checkout</h2>
+        <p className="text-muted">Order Total:{ `$${itemTotal}`}</p>
         <form
           onSubmit={this.handleSubmit}
           onReset={this.handleReset}>
-          <label htmlFor="name">Name</label>
-          <input
-            onChange={this.handleChangeName}
-            type="text"
-            id="name"/>
-          <label htmlFor="credit-card">Credit Card</label>
-          <input
-            onChange={this.handleChangeCC}
-            type="text"
-            id="credit-card"/>
-          <label htmlFor="shipping">Shipping Address</label>
-          <textarea
-            onChange={this.handleChangeShipping}
-            id="shipping"></textarea>
+            <div>
+            <label className="d-block" htmlFor="name">Name</label>
+            <input
+              className="w-100 mb-3 border rounded-sm"
+              onChange={this.handleChangeName}
+              type="text"
+              id="name" />
+            </div>
+          <div>
+            <label className="d-block" htmlFor="credit-card">Credit Card</label>
+            <input
+              className="w-100 mb-3 border rounded-sm"
+              onChange={this.handleChangeCC}
+              type="text"
+              id="credit-card" />
+          </div>
+          <div className="mb-5 h-25">
+            <label className="d-block" htmlFor="shipping">Shipping Address</label>
+            <input
+              className="w-100 border rounded-sm form-control-lg"
+              onChange={this.handleChangeShipping}
+              type="text"
+              id="shipping"></input>
+          </div>
           <div className="row">
             <p className="col-8" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
             <button className="col-4 btn btn-primary p-2" type="submit">Place Order</button>

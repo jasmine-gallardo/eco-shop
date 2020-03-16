@@ -29,9 +29,9 @@ export default function CartSummary(props) {
           );
         })
       }
-      <div className="row">
-        <h4 className="col-8">Item Total {`$${itemTotal}`}</h4>
-        <button onClick={() => props.setView('checkout', {})} className="col-4">Checkout</button>
+      <div className="row m-2">
+        <h4 className="col-9">Item Total {`$${itemTotal}`}</h4>
+        <button onClick={() => props.setView('checkout', {})} className="col-3 btn btn-primary w-25">Checkout</button>
       </div>
     </div>
   );

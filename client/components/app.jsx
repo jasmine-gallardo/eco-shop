@@ -79,7 +79,7 @@ export default class App extends React.Component {
         <CartSummary cart={this.state.cart} setView={this.setView} />
         break;
       case 'checkout': view =
-          <CheckoutForm placeOrder={this.placeOrder} setView={this.setView}/>
+        <CheckoutForm cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView}/>
     }
     return (
       <div>
