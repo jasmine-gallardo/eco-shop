@@ -54,9 +54,6 @@ export default class CheckoutForm extends React.Component {
   }
 
   render() {
-    const name = this.state.name;
-    const creditCard = this.state.creditCard;
-    const shippingAddress = this.state.shippingAddress;
     if (this.props.cart.length === 0) {
       return (
         <div>
@@ -74,14 +71,14 @@ export default class CheckoutForm extends React.Component {
         <form
           onSubmit={this.handleSubmit}
           onReset={this.handleReset}>
-            <div>
+          <div>
             <label className="d-block" htmlFor="name">Name</label>
             <input
               className="w-100 mb-3 border rounded-sm"
               onChange={this.handleChangeName}
               type="text"
               id="name" />
-            </div>
+          </div>
           <div>
             <label className="d-block" htmlFor="credit-card">Credit Card</label>
             <input
@@ -92,11 +89,10 @@ export default class CheckoutForm extends React.Component {
           </div>
           <div className="mb-5 h-25">
             <label className="d-block" htmlFor="shipping">Shipping Address</label>
-            <input
-              className="w-100 border rounded-sm form-control-lg"
+            <textarea
+              className="w-100 border rounded-sm"
               onChange={this.handleChangeShipping}
-              type="text"
-              id="shipping"></input>
+              id="shipping"></textarea>
           </div>
           <div className="row">
             <p className="col-8" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
