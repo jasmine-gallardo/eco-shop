@@ -3,6 +3,7 @@ import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
+import CheckoutForm from './checkout-form';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -47,11 +48,11 @@ export default class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  placeOrder(object) {
+  placeOrder(newOrder) {
     const req = {
       method: "POST",
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify(object)
+      body: JSON.stringify(newOrder)
     }
     fetch('/api/orders', req)
       .then(res => res.json())
@@ -73,6 +74,8 @@ export default class App extends React.Component {
       case 'cart': view =
         <CartSummary cart={this.state.cart} setView={this.setView} />
         break;
+      case 'checkout': view =
+          <CheckoutForm placeOrder={this.placeOrder}/>
     }
     return (
       <div>

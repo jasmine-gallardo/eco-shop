@@ -29,7 +29,10 @@ export default function CartSummary(props) {
           );
         })
       }
-      <h4>Item Total {`$${itemTotal}`}</h4>
+      <div className="row">
+        <h4 className="col-8">Item Total {`$${itemTotal}`}</h4>
+        <button onClick={() => props.setView('checkout', {})} className="col-4">Checkout</button>
+      </div>
     </div>
   );
 }
