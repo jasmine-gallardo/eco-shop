@@ -54,7 +54,6 @@ export default class CheckoutForm extends React.Component {
   }
 
   render() {
-    const placeOrder = this.props.placeOrder;
     const name = this.state.name;
     const creditCard = this.state.creditCard;
     const shippingAddress = this.state.shippingAddress;
@@ -81,8 +80,7 @@ export default class CheckoutForm extends React.Component {
             id="shipping"></textarea>
           <div className="row">
             <p className="col-8" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
-            <button className="col-4 btn btn-primary p-2"
-              onClick={() => placeOrder(name, creditCard, shippingAddress)}>Place Order</button>
+            <button className="col-4 btn btn-primary p-2" type="submit">Place Order</button>
           </div>
         </form>
       </div>

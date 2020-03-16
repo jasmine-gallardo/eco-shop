@@ -14,6 +14,7 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
   }
 
   componentDidMount() {
@@ -51,14 +52,17 @@ export default class App extends React.Component {
   placeOrder(newOrder) {
     const req = {
       method: "POST",
-      headers: { 'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newOrder)
     }
     fetch('/api/orders', req)
       .then(res => res.json())
-      .then(order => this.setState({ cart: [] }))
+      .then(result => {
+        const emptyArray = [];
+        this.setState({ cart: emptyArray });
+      })
       .then(result => this.setView('catalog', {}))
-      .catch(err => console.err(err));
+      .catch(err => console.error(err));
   }
 
   render() {
