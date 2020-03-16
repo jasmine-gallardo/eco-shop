@@ -80,7 +80,7 @@ export default class CheckoutForm extends React.Component {
             onChange={this.handleChangeShipping}
             id="shipping"></textarea>
           <div className="row">
-            <p className="col-8"> &lt; Continue Shopping</p>
+            <p className="col-8" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
             <button className="col-4 btn btn-primary p-2"
               onClick={() => placeOrder(name, creditCard, shippingAddress)}>Place Order</button>
           </div>
