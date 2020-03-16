@@ -10,6 +10,27 @@ export default class CheckoutForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeCC = this.handleChangeCC.bind(this);
+    this.handleChangeShipping = this.handleChangeShipping.bind(this);
+  }
+
+  handleChangeName(event) {
+    this.setState({
+      name: event.target.value
+    });
+  }
+
+  handleChangeCC(event) {
+    this.setState({
+      creditCard: event.target.value
+    });
+  }
+
+  handleChangeShipping(event) {
+    this.setState({
+      shippingAddress: event.target.value
+    });
   }
 
   handleSubmit(event) {
@@ -45,11 +66,19 @@ export default class CheckoutForm extends React.Component {
           onSubmit={this.handleSubmit}
           onReset={this.handleReset}>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name"/>
+          <input
+            onChange={this.handleChangeName}
+            type="text"
+            id="name"/>
           <label htmlFor="credit-card">Credit Card</label>
-          <input type="text" id="credit-card"/>
+          <input
+            onChange={this.handleChangeCC}
+            type="text"
+            id="credit-card"/>
           <label htmlFor="shipping">Shipping Address</label>
-          <textarea id="shipping"></textarea>
+          <textarea
+            onChange={this.handleChangeShipping}
+            id="shipping"></textarea>
           <div className="row">
             <p className="col-8"> &lt; Continue Shopping</p>
             <button className="col-4 btn btn-primary p-2"
