@@ -35,7 +35,7 @@ export default class App extends React.Component {
   addToCart(product) {
     const req = {
       method: "POST",
-      headers: { 'Content-Type': 'application/json ' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(product)
     }
     fetch('/api/cart', req)
@@ -45,6 +45,15 @@ export default class App extends React.Component {
         this.setState({ cart: allCartItemsArray });
       })
       .catch(err => console.error(err));
+  }
+
+  placeOrder(object) {
+    const req = {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(object)
+    }
+    fetch('/api/orders', req)
   }
 
   render() {
