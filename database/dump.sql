@@ -229,12 +229,6 @@ ALTER TABLE ONLY public.products ALTER COLUMN "productId" SET DEFAULT nextval('p
 --
 
 COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
-33	6	6	830
-34	6	5	9900
-35	7	5	9900
-36	8	5	9900
-37	5	1	2999
-38	9	5	9900
 \.
 
 
@@ -243,10 +237,6 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 --
 
 COPY public.carts ("cartId", "createdAt") FROM stdin;
-6	2020-03-15 22:21:13.990377+00
-7	2020-03-15 23:25:53.33375+00
-8	2020-03-15 23:33:32.281552+00
-9	2020-03-15 23:39:43.149139+00
 \.
 
 
@@ -255,14 +245,6 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 --
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
-1	6	Jasmine	1234567	123 Main	2020-03-15 22:46:33.478206+00
-2	6	Jasmine	1234567	123 Main	2020-03-15 23:08:13.59469+00
-3	6	Jasmine	1234567	123 Main	2020-03-15 23:09:44.193419+00
-4	6	Jasmine	1234567	123 Main	2020-03-15 23:13:46.087717+00
-5	6	Jasmine	1234567	123 Main	2020-03-15 23:21:35.385165+00
-6	7	Jasmine	1234567	123 Main	2020-03-15 23:26:29.969262+00
-7	8	Jasmine	1234567	123 Main	2020-03-15 23:37:48.937507+00
-8	9	Jasmine	1234567	123 Main	2020-03-15 23:39:46.529987+00
 \.
 
 
