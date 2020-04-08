@@ -14,7 +14,7 @@ A full stack Node.js and React shopping cart app.
 
 ## Live Demo
 
-[Try Wicked Sales] ( https://wicked-sales.jasminegallardo.com/ "Wicked Sales")
+[Try Wicked Sales]( https://wicked-sales.jasminegallardo.com/ "Wicked Sales")
 
 ## Features
 - User can view catalog of products
@@ -25,7 +25,7 @@ A full stack Node.js and React shopping cart app.
 
 ## Preview
 
-! [Wicked Sales Preview] (server/public/images/preview-wicked-sales.gif "Wicked Sales Preview")
+![Wicked Sales Preview](server/public/images/preview-wicked-sales.gif "Wicked Sales Preview")
 
 ## Development
 
