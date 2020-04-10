@@ -9,7 +9,7 @@ export default function ProductListItem(props) {
   const setViewProp = props.setViewProp;
 
   return (
-    <div className="card col-3 m-2" onClick={() => setViewProp('details', { productId })}>
+    <div className="card col-md-3 m-2 col-sm-5 col-12" onClick={() => setViewProp('details', { productId })}>
       <img className="card-img-top" src={productImage}/>
       <div className="card-body p-2">
         <h5 className="card-title">{productName}</h5>

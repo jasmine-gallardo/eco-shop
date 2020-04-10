@@ -16,3 +16,24 @@ div > img {
 .previous-page:hover {
   text-shadow: 1px 1px 3px rgba(10, 5, 5, 0.226);
 }
+
+@media screen and (max-width: 576px) and (orientation: portrait) {
+  .wicked-sales-text {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 812px) and (orientation: landscape) {
+  .header-container {
+    padding: 0;
+  }
+  header {
+    margin-right: 0;
+  }
+  .wicked-sales-text {
+    width: 70%;
+  }
+  .cart-items {
+    width: 30%;
+  }
+}
