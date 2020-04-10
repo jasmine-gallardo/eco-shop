@@ -9,12 +9,19 @@ div > img {
   object-fit: cover;
 }
 
-.card:hover {
+.item:hover {
   background-color: aliceblue;
+  cursor: pointer;
 }
+
+.fa-shopping-cart {
+  cursor: pointer;
+}
+
 
 .previous-page:hover {
   text-shadow: 1px 1px 3px rgba(10, 5, 5, 0.226);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 576px) and (orientation: portrait) {
