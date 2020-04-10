@@ -8,3 +8,11 @@ div > img {
   width: 15rem;
   object-fit: cover;
 }
+
+.card:hover {
+  background-color: aliceblue;
+}
+
+.previous-page:hover {
+  text-shadow: 1px 1px 3px rgba(10, 5, 5, 0.226);
+}
