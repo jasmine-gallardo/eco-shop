@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CartSummaryItem(props) {
   return (
-    <div className="card m-4">
+    <div className="card mt-4 mb-4 cart-summary-item">
       <div className="row no-gutters">
         <div className="col-md-4">
           <img className="card-img cart-item-img" src={props.image} />
