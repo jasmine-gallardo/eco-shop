@@ -85,7 +85,7 @@ export default class App extends React.Component {
       <div>
         <Header cartItemCount={this.state.cart.length} setView={this.setView} />
         <div className="container">
-          <div className="row pt-4 pb-4 justify-content-center">
+          <div className="view-row row pt-4 pb-4 justify-content-center">
             {view}
           </div>
         </div>

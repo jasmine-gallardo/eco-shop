@@ -95,7 +95,7 @@ export default class CheckoutForm extends React.Component {
               id="shipping"></textarea>
           </div>
           <div className="row">
-            <p className="col-8" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
+            <p className="col-8 previous-page" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
             <button className="col-4 btn btn-primary p-2" type="submit">Place Order</button>
           </div>
         </form>

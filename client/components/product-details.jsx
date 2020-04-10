@@ -17,8 +17,8 @@ export default class ProductDetails extends React.Component {
     const productId = this.props.params.productId;
     fetch(`/api/products/${productId}`)
       .then(res => res.json())
-      .then(result => this.setState({ product: result}))
-      .catch(err => console.err(err));
+      .then(result => this.setState({ product: result }))
+      .catch(err => console.error(err));
   }
 
   render() {
@@ -28,7 +28,7 @@ export default class ProductDetails extends React.Component {
     if (product) {
       return (
         <div className="container">
-          <p onClick={() => setViewProp('catalog', {})}> &lt; Back to Catalog</p>
+          <p onClick={() => setViewProp('catalog', {})} className="previous-page"> &lt; Back to Catalog</p>
           <div className="row justify-content-center mt-4 mb-4">
             <div className="col-5">
               <img src={product.image}></img>
