@@ -4,6 +4,7 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     const cartItemCount = this.props.cartItemCount;
     const setView = this.props.setView;
