@@ -23,6 +23,12 @@ div > img {
   }
 }
 
+@media screen and (min-width: 320px) and (orientation: portrait) {
+  .cart-summary-item {
+    margin: .5rem;
+  }
+}
+
 @media screen and (max-width: 812px) and (orientation: landscape) {
   .header-container {
     padding: 0;
@@ -45,5 +51,13 @@ div > img {
   }
   .item {
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .product-image {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3rem;
   }
 }

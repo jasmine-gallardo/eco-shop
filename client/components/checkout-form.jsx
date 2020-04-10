@@ -77,7 +77,8 @@ export default class CheckoutForm extends React.Component {
               className="w-100 mb-3 border rounded-sm"
               onChange={this.handleChangeName}
               type="text"
-              id="name" />
+              id="name"
+              required />
           </div>
           <div>
             <label className="d-block" htmlFor="credit-card">Credit Card</label>
@@ -85,18 +86,20 @@ export default class CheckoutForm extends React.Component {
               className="w-100 mb-3 border rounded-sm"
               onChange={this.handleChangeCC}
               type="text"
-              id="credit-card" />
+              id="credit-card"
+              required/>
           </div>
-          <div className="mb-5 h-25">
+          <div className="mb-3 h-25">
             <label className="d-block" htmlFor="shipping">Shipping Address</label>
             <textarea
               className="w-100 border rounded-sm"
               onChange={this.handleChangeShipping}
-              id="shipping"></textarea>
+              id="shipping"
+              required></textarea>
           </div>
           <div className="row">
-            <p className="col-8 previous-page" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
-            <button className="col-4 btn btn-primary p-2" type="submit">Place Order</button>
+            <p className="col-sm-8 previous-page" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
+            <button className="col-sm-4 btn btn-primary p-2" type="submit">Place Order</button>
           </div>
         </form>
       </div>

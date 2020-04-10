@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const cartItemCount = this.props.cartItemCount;
     const setView = this.props.setView;
@@ -17,7 +13,7 @@ export default class Header extends React.Component {
           </div>
           <div className="cart-items col-md-3 col-sm-3 d-flex justify-content-center align-items-center"
             onClick={() => setView('cart', {})}>
-            <p className="m-2">{`${cartItemCount} items`}</p>
+            <p className="m-1">{`${cartItemCount} items`}</p>
             <i className="fas fa-shopping-cart fa-2x"></i>
           </div>
         </header>
