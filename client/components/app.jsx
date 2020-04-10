@@ -36,10 +36,10 @@ export default class App extends React.Component {
 
   addToCart(product) {
     const req = {
-      method: "POST",
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(product)
-    }
+    };
     fetch('/api/cart', req)
       .then(res => res.json())
       .then(newCartItem => {
@@ -51,10 +51,10 @@ export default class App extends React.Component {
 
   placeOrder(newOrder) {
     const req = {
-      method: "POST",
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newOrder)
-    }
+    };
     fetch('/api/orders', req)
       .then(res => res.json())
       .then(result => {
@@ -69,17 +69,17 @@ export default class App extends React.Component {
     let view;
     switch (this.state.view.name) {
       case 'catalog': view =
-        <ProductList view={this.state.view} setViewProp={this.setView} />
+        <ProductList view={this.state.view} setViewProp={this.setView} />;
         break;
       case 'details': view =
         <ProductDetails
-          params={this.state.view.params} setViewProp={this.setView} addToCart={this.addToCart} />
+          params={this.state.view.params} setViewProp={this.setView} addToCart={this.addToCart} />;
         break;
       case 'cart': view =
-        <CartSummary cart={this.state.cart} setView={this.setView} />
+        <CartSummary cart={this.state.cart} setView={this.setView} />;
         break;
       case 'checkout': view =
-        <CheckoutForm cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView}/>
+        <CheckoutForm cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView}/>;
     }
     return (
       <div>
