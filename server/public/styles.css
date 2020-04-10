@@ -26,7 +26,6 @@ div > img {
 @media screen and (min-width: 320px) and (orientation: portrait) {
   .cart-summary-item {
     margin: .5rem;
-    /* max-width: 100% */
   }
 }
 
@@ -52,5 +51,13 @@ div > img {
   }
   .item {
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .product-image {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3rem;
   }
 }

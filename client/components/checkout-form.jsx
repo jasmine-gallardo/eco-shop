@@ -89,7 +89,7 @@ export default class CheckoutForm extends React.Component {
               id="credit-card"
               required/>
           </div>
-          <div className="mb-5 h-25">
+          <div className="mb-3 h-25">
             <label className="d-block" htmlFor="shipping">Shipping Address</label>
             <textarea
               className="w-100 border rounded-sm"
@@ -98,8 +98,8 @@ export default class CheckoutForm extends React.Component {
               required></textarea>
           </div>
           <div className="row">
-            <p className="col-8 previous-page" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
-            <button className="col-4 btn btn-primary p-2" type="submit">Place Order</button>
+            <p className="col-sm-8 previous-page" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
+            <button className="col-sm-4 btn btn-primary p-2" type="submit">Place Order</button>
           </div>
         </form>
       </div>
