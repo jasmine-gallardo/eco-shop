@@ -56,10 +56,7 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 app.get('/api/cart', (req, res, next) => {
   const cartId = req.session.cartId;
-  if (!req.session.cartId) {
-    return [];
-  } else {
-    const sql = `select "c"."cartItemId",
+  const sql = `select "c"."cartItemId",
                 "c"."price",
                 "p"."productId",
                 "p"."image",
@@ -70,11 +67,16 @@ app.get('/api/cart', (req, res, next) => {
           where "c"."cartId" = $1
           `;
 
-    const values = [cartId];
+  const values = [cartId];
 
-    db.query(sql, values)
-      .then(result => res.status(200).json(result.rows))
-      .catch(err => next(err));
+  if (!req.session.cartId) {
+    return res.json([]);
+  } else {
+    return (
+      db.query(sql, values)
+        .then(result => res.status(200).json(result.rows))
+        .catch(err => next(err))
+    );
   }
 });
 
@@ -102,7 +104,7 @@ app.post('/api/cart', (req, res, next) => {
         returning "cartId"
       `;
       if (!result.rows.length === 0) {
-          throw new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404);
+        throw new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404);
       }
 
       if (req.session.cartId) {
@@ -162,7 +164,7 @@ app.post('/api/cart', (req, res, next) => {
           .then(result => res.status(201).json(result.rows[0]))
       );
     })
-    .catch (err => next(err));
+    .catch(err => next(err));
 });
 
 app.post('/api/orders', (req, res, next) => {
