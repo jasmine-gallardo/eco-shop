@@ -10,7 +10,7 @@ body {
 
 div > img {
   width: 15rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .item:hover {
