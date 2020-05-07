@@ -14,10 +14,9 @@ div > img {
   cursor: pointer;
 }
 
-.fa-shopping-cart {
+.clickable-header:hover {
   cursor: pointer;
 }
-
 
 .previous-page:hover {
   text-shadow: 1px 1px 3px rgba(10, 5, 5, 0.226);
