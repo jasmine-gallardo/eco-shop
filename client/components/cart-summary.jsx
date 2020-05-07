@@ -5,7 +5,7 @@ export default function CartSummary(props) {
   if (props.cart.length === 0) {
     return (
       <div className="container">
-        <p onClick={() => props.setView('catalog', {})} className="previous-page"> &lt; Back to Catalog</p>
+        <button onClick={() => props.setView('catalog', {})} className="btn btn-outline-info mb-3">Back to Catalog</button>
         <p className="text-center">There are no items in your cart.</p>
       </div>
     );
@@ -15,7 +15,7 @@ export default function CartSummary(props) {
   const itemTotal = (itemTotalReduce / 100).toFixed(2);
   return (
     <div className="container">
-      <p onClick={() => props.setView('catalog', {})} className="previous-page"> &lt; Back to Catalog</p>
+      <button onClick={() => props.setView('catalog', {})} className="btn btn-outline-info mb-3">Back to Catalog</button>
       <h2>My Cart</h2>
       {
         props.cart.map(item => {

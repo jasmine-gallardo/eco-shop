@@ -28,7 +28,7 @@ export default class ProductDetails extends React.Component {
     if (product) {
       return (
         <div className="container m-3">
-          <p onClick={() => setViewProp('catalog', {})} className="previous-page"> &lt; Back to Catalog</p>
+          <button onClick={() => setViewProp('catalog', {})} className="previous-page btn btn-outline-info">Back to Catalog</button>
           <div className="row justify-content-center mt-4 mb-4">
             <div className="col-md-5 col-sm-12 product-image">
               <img src={product.image}></img>
