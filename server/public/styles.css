@@ -24,6 +24,12 @@ div > img {
   cursor: pointer;
 }
 
+.modal-bg {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.575);
+  color: white;
+}
+
 @media screen and (max-width: 576px) and (orientation: portrait) {
   .wicked-sales-text {
     justify-content: center;
