@@ -6,7 +6,7 @@ export default class Header extends React.Component {
     const setView = this.props.setView;
     return (
       <div className="header-container">
-        <header className="row fixed-top py-3 px-5 bg-dark text-white">
+        <header className="row fixed-top py-3 px-5 bg-dark text-white shadow-sm">
           <div className="wicked-sales-text ml-md-5 ml-sm-2 d-flex" onClick={() => setView('catalog', {})}>
             <i className="fas fa-leaf fa-1x m-2"></i>
             <p className="clickable-header lead mb-0">Eco Shop</p>
