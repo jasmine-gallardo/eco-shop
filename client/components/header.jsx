@@ -5,16 +5,16 @@ export default class Header extends React.Component {
     const cartItemCount = this.props.cartItemCount;
     const setView = this.props.setView;
     return (
-      <div className="container header-container">
-        <header className="row p-2 bg-dark text-white">
-          <div className="wicked-sales-text col-md-9 col-sm-9 d-flex" onClick={() => setView('catalog', {})}>
-            <i className="fas fa-leaf fa-2x d-inline-block m-2"></i>
-            <h2 className="clickable-header d-inline-block">Eco Shop</h2>
+      <div className="header-container">
+        <header className="row fixed-top py-3 px-5 bg-dark text-white">
+          <div className="wicked-sales-text ml-md-5 ml-sm-2 d-flex" onClick={() => setView('catalog', {})}>
+            <i className="fas fa-leaf fa-1x m-2"></i>
+            <p className="clickable-header lead mb-0">Eco Shop</p>
           </div>
-          <div className="cart-items col-md-3 col-sm-3 d-flex justify-content-center align-items-center"
+          <div className="cart-items ml-auto mr-md-5 mr-sm-2 d-flex align-items-center"
             onClick={() => setView('cart', {})}>
             <p className="m-1">{`${cartItemCount} items`}</p>
-            <i className="clickable-header fas fa-shopping-cart fa-2x"></i>
+            <i className="clickable-header fas fa-shopping-cart fa-1x"></i>
           </div>
         </header>
       </div>
