@@ -97,9 +97,13 @@ export default class CheckoutForm extends React.Component {
               id="shipping"
               required></textarea>
           </div>
+          <div className="row mb-3 mx-auto">
+            <input type="checkbox" id="disclaimer" className="col-1" required />
+            <label htmlFor="disclaimer" className="col p-0">I understand that I cannot make real purchases and should not use my personal or financial information including my real name, address, or credit card information.</label>
+          </div>
           <div className="row">
-            <p className="col-sm-8 previous-page" onClick={() => this.props.setView('catalog', {})}> &lt; Continue Shopping</p>
-            <button className="col-sm-4 btn btn-primary p-2" type="submit">Place Order</button>
+            <button onClick={() => this.props.setView('catalog', {})} className="btn btn-outline-info">Back to Catalog</button>
+            <button className="btn btn-primary ml-auto" type="submit">Place Order</button>
           </div>
         </form>
       </div>
