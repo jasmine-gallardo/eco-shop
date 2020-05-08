@@ -27,23 +27,25 @@ export default class ProductDetails extends React.Component {
     const addToCart = this.props.addToCart;
     if (product) {
       return (
-        <div className="container m-3">
+        <div className="container m-5">
           <button onClick={() => setViewProp('catalog', {})} className="previous-page btn btn-outline-info">Back to Catalog</button>
-          <div className="row justify-content-center mt-4 mb-4">
-            <div className="col-md-5 col-sm-12 product-image">
-              <img src={product.image}></img>
-            </div>
-            <div className="col-md-6 col-sm-12">
-              <h3>{product.name}</h3>
-              <p className="text-muted">{`$${(product.price / 100).toFixed(2)}`}</p>
-              <p>{product.shortDescription}</p>
-              <div className="add-cart-button">
-                <button onClick={() => addToCart(product)} className="btn btn-primary p-2">Add to Cart</button>
+          <div className="container card mt-4">
+            <div className="row justify-content-center mx-2 my-4">
+              <div className="col-md-5 col-sm-12 product-image">
+                <img src={product.image} className="col-12"></img>
+              </div>
+              <div className="col-md-6 col-sm-12 m-auto">
+                <h3>{product.name}</h3>
+                <p className="text-muted">{`$${(product.price / 100).toFixed(2)}`}</p>
+                <p>{product.shortDescription}</p>
+                <div className="add-cart-button">
+                  <button onClick={() => addToCart(product)} className="btn btn-primary p-2">Add to Cart</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <p>{product.longDescription}</p>
+            <div className="px-4 mb-4">
+              <p>{product.longDescription}</p>
+            </div>
           </div>
         </div>
       );
