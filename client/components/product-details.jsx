@@ -27,7 +27,7 @@ export default class ProductDetails extends React.Component {
     const addToCart = this.props.addToCart;
     if (product) {
       return (
-        <div className="container m-5">
+        <div className="container m-sm-5 m-3">
           <button onClick={() => setViewProp('catalog', {})} className="previous-page btn btn-outline-info">Back to Catalog</button>
           <div className="container card mt-4">
             <div className="row justify-content-center mx-2 my-4">
