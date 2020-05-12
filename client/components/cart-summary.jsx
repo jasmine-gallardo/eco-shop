@@ -14,8 +14,8 @@ export default function CartSummary(props) {
   const itemTotalReduce = cartArrayCopy.reduce((acc, curr) => acc + curr);
   const itemTotal = (itemTotalReduce / 100).toFixed(2);
   return (
-    <div className="container">
-      <button onClick={() => props.setView('catalog', {})} className="btn btn-outline-info mb-3">Back to Catalog</button>
+    <div className="container p-5">
+      <button onClick={() => props.setView('catalog', {})} className="btn btn-outline-info mb-4">Back to Catalog</button>
       <h2>My Cart</h2>
       {
         props.cart.map(item => {
@@ -32,7 +32,7 @@ export default function CartSummary(props) {
       }
       <div className="row m-2">
         <h4 className="col-sm-9 col-7">Item Total {`$${itemTotal}`}</h4>
-        <button onClick={() => props.setView('checkout', {})} className="btn btn-primary w-25">Checkout</button>
+        <button onClick={() => props.setView('checkout', {})} className="btn btn-primary w-25 ml-auto">Checkout</button>
       </div>
     </div>
   );
