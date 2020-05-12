@@ -1,4 +1,4 @@
-# Wicked Sales Shopping Cart
+# Eco Shop - Shopping Cart App
 A full stack Node.js and React shopping cart app.
 
 ## Technologies Used
@@ -14,7 +14,7 @@ A full stack Node.js and React shopping cart app.
 
 ## Live Demo
 
-[Try Wicked Sales]( https://wicked-sales.jasminegallardo.com/ "Wicked Sales")
+[Try Eco Shop]( https://eco-shop.jasminegallardo.com/ "Eco Shop")
 
 ## Features
 - User can view catalog of products
@@ -25,7 +25,7 @@ A full stack Node.js and React shopping cart app.
 
 ## Preview
 
-![Wicked Sales Preview](server/public/images/preview-wicked-sales.gif "Wicked Sales Preview")
+![Eco Shop Preview](server/public/images/preview-eco-shop.gif "Eco Shop Preview")
 
 ## Development
 
@@ -38,8 +38,8 @@ A full stack Node.js and React shopping cart app.
 
 1. Clone this repository.
 ```shell
-git clone https://github.com/jasmine-gallardo/wicked-sales-js
-cd wicked-sales-js
+git clone https://github.com/jasmine-gallardo/eco-shop
+cd eco-shop
 ```
 
 2. Install all dependencies with NPM.
@@ -54,7 +54,7 @@ sudo service postgresql start
 
 4. In your first terminal, create the database.
 ```shell
-createdb wickedSales
+createdb ecoShop
 ```
 
 5. Import the database to PostgreSQL.
@@ -64,7 +64,7 @@ npm run db:import
 
 6. Use pgweb to access the database.
 ```shell
-pgweb --db=wickedSales
+pgweb --db=ecoShop
 ```
 
 7. Start the project. You can view the application by opening http://localhost:3000 in your browser.
