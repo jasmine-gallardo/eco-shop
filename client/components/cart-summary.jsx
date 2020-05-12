@@ -4,9 +4,9 @@ import CartSummaryItem from './cart-summary-item';
 export default function CartSummary(props) {
   if (props.cart.length === 0) {
     return (
-      <div className="container">
+      <div className="container text-center">
+        <p>There are no items in your cart.</p>
         <button onClick={() => props.setView('catalog', {})} className="btn btn-outline-info mb-3">Back to Catalog</button>
-        <p className="text-center">There are no items in your cart.</p>
       </div>
     );
   }
