@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 .card-img-top,
 .cart-item-img {
   height: 10rem;
@@ -6,7 +10,7 @@
 
 div > img {
   width: 15rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .item:hover {
@@ -14,57 +18,11 @@ div > img {
   cursor: pointer;
 }
 
-.fa-shopping-cart {
+.clickable-header:hover {
   cursor: pointer;
 }
 
-
-.previous-page:hover {
-  text-shadow: 1px 1px 3px rgba(10, 5, 5, 0.226);
-  cursor: pointer;
-}
-
-@media screen and (max-width: 576px) and (orientation: portrait) {
-  .wicked-sales-text {
-    justify-content: center;
-  }
-}
-
-@media screen and (min-width: 320px) and (orientation: portrait) {
-  .cart-summary-item {
-    margin: .5rem;
-  }
-}
-
-@media screen and (max-width: 812px) and (orientation: landscape) {
-  .header-container {
-    padding: 0;
-  }
-  header {
-    margin-right: 0;
-  }
-  .wicked-sales-text {
-    width: 70%;
-  }
-  .cart-items {
-    width: 30%;
-  }
-}
-
-@media screen and (min-width: 576px) and (max-width: 723px) and (orientation: landscape) {
-  .view-row {
-    display: block;
-    width: 100%;
-  }
-  .item {
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 768px){
-  .product-image {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 3rem;
-  }
+.modal-bg {
+  background-color: rgba(0, 0, 0, 0.575);
+  color: white;
 }
