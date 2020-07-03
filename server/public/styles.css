@@ -73,3 +73,31 @@ div > img {
   width: 200px;
   height: 100px;
 }
+
+h4 {
+  font-size: 3.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+  height: 50vh;
+}
+
+  .fa-leaf {
+    display: none;
+  }
+
+  .header-col-2 {
+    padding: 0 3rem;
+  }
+
+  .header-text {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+}
