@@ -25,13 +25,19 @@ export default class ProductList extends React.Component {
     const setViewProp = this.props.setViewProp;
     const productsListArray = this.state.products;
     return (
-      <div>
-        <div className="hero-container">
-          <div className="hero-image mx-auto my-3 text-center row">
-            <h4 className="display-4 col-12 m-auto">Seasonal Sale</h4>
+      <div className="hero-container row py-5 align-items-center">
+        <div className="hero-image ml-auto text-center row col-12 col-md-7"></div>
+        <div className="header-col-2 col-12 col-md-3 ml-md-3 mr-auto">
+          <div className="position-helper">
+            <i className="fas fa-leaf fa-7x mb-4"></i>
+            <div className="header-text">
+              <h4 className="text-dark typeface-1 font-weight-bold">Seasonal Sale</h4>
+              <p>Claim our best products of the season </p>
+              <a href="#scroll-catalog-view" className="btn btn-block btn-dark">Shop now</a>
+            </div>
           </div>
         </div>
-        <div className="row justify-content-center mt-5">
+        <div id="scroll-catalog-view" className="row justify-content-center mt-5">
           {
             productsListArray.map(product => {
               return (
