@@ -1,5 +1,11 @@
 html, body {
+  max-width: 100%;
+  height: 100%;
   overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
 }
 
 .card-img-top,
@@ -25,4 +31,15 @@ div > img {
 .modal-bg {
   background-color: rgba(0, 0, 0, 0.575);
   color: white;
+}
+
+.hero-container {
+  height: 92vh;
+}
+
+.hero-image {
+  height: 100%;
+  width: 100%;
+  color: white;
+  background: url(./images/freestocks-DlZD4V2j9oM-unsplash.jpg) no-repeat center/cover;
 }
