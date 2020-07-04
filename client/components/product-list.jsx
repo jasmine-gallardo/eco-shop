@@ -25,9 +25,9 @@ export default class ProductList extends React.Component {
     const setViewProp = this.props.setViewProp;
     const productsListArray = this.state.products;
     return (
-      <div className="hero-container row py-5 align-items-center">
+      <div className="hero-container row py-5">
         <div className="hero-image ml-auto text-center row col-12 col-md-7"></div>
-        <div className="header-col-2 col-12 col-md-3 ml-md-3 mr-auto">
+        <div className="header-text-2 col-12 col-md-3 ml-md-3 mr-auto">
           <div className="position-helper">
             <i className="fas fa-leaf fa-7x mb-4"></i>
             <div className="header-text">
