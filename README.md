@@ -25,6 +25,8 @@ A full stack Node.js and React shopping cart app.
 
 ## Preview
 
+![Eco Shop Preview 1](server/public/images/preview-eco-shop-1.png "Eco Shop Preview 1")
+
 ![Eco Shop Preview](server/public/images/preview-eco-shop.gif "Eco Shop Preview")
 
 ## Development

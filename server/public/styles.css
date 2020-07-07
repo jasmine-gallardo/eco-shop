@@ -41,8 +41,18 @@ div > img {
 }
 
 .modal-bg {
-  background-color: rgba(0, 0, 0, 0.575);
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.192);
   color: white;
+}
+
+.modal-container {
+  margin: auto;
+  padding: 3rem;
+  background-color: rgba(0, 0, 0, 0.575);
 }
 
 .hero-container {
@@ -60,9 +70,9 @@ div > img {
   padding-top: 9rem;
 }
 
-/* .header-text {
+.header-text {
   margin-top: 9rem;
-} */
+}
 
 /* .position-helper {
   position: relative;
@@ -95,8 +105,12 @@ h4 {
   }
 } */
 
-@media screen and (max-width: 1024px) {
 
+.no-display {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
   .hero-container {
   height: 50vh;
 }
@@ -127,5 +141,12 @@ h4 {
 
   .cart-text {
     font-size: 1rem;
+  }
+}
+/* iPhone 5 */
+
+@media screen and (max-width: 320px) {
+  .modal-container {
+    padding: 1rem;
   }
 }
