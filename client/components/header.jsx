@@ -1,4 +1,5 @@
 import React from 'react';
+import DisclaimerModal from './modal';
 
 export default class Header extends React.Component {
   render() {
@@ -6,6 +7,7 @@ export default class Header extends React.Component {
     const setView = this.props.setView;
     return (
       <div className="header-container">
+        <DisclaimerModal />
         <header className="row py-3 px-3 bg-light text-dark">
           <div className="clickable cart-items col-4 p-0 col-md-2 d-flex align-items-center justify-content-center">
             {/* <i class="fas fa-bars fa-1x"></i> */}
