@@ -4,13 +4,12 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
-import DisclaimerModal from './modal';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'modal', params: {} },
+      view: { name: 'catalog', params: {} },
       cart: []
     };
     this.setView = this.setView.bind(this);
@@ -67,11 +66,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.view.name === 'modal') {
-      return (
-        <DisclaimerModal setView={this.setView} />
-      );
-    }
     let view;
     switch (this.state.view.name) {
       case 'catalog': view =
