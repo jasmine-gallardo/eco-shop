@@ -45,6 +45,8 @@ export default class App extends React.Component {
       .then(newCartItem => {
         const allCartItemsArray = this.state.cart.concat(newCartItem);
         this.setState({ cart: allCartItemsArray });
+        const cartIcon = document.querySelector('.item-added');
+        cartIcon.classList.remove('no-display');
       })
       .catch(err => console.error(err));
   }
