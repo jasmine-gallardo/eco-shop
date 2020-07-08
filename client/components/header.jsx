@@ -1,5 +1,6 @@
 import React from 'react';
 import DisclaimerModal from './modal';
+import PreviewCartSummary from './preview-cart-summary';
 
 export default class Header extends React.Component {
   render() {
@@ -9,7 +10,8 @@ export default class Header extends React.Component {
       <div>
         <DisclaimerModal />
         <div className="header-container">
-          <header className="row py-3 px-3 bg-light text-dark">
+          <PreviewCartSummary cartItemCount={cartItemCount}/>
+          <header className="row py-3 px-3 bg-light text-dark ">
             <div className="clickable cart-items col-3 p-0 col-md-2 d-flex align-items-center justify-content-center">
               {/* <i class="fas fa-bars fa-1x"></i> */}
             </div>
@@ -21,6 +23,7 @@ export default class Header extends React.Component {
               <p className="m-1 typeface-1 cart-text">{`${cartItemCount} items`}</p>
               <i className="fas fa-shopping-cart fa-1x"></i>
             </div>
+
           </header>
         </div>
       </div>
