@@ -16,7 +16,7 @@ export default class DisclaimerModal extends React.Component {
   render() {
     if (this.state.clicked === true) {
       const modalContainer = document.querySelector('.modal-container');
-      modalContainer.classList.add('no-display');
+      modalContainer.classList.add('d-none');
     }
     return (
       <div className="modal-bg align-items-center">
