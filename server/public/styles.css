@@ -66,25 +66,15 @@ div > img {
   background: url(./images/freestocks-DlZD4V2j9oM-unsplash.jpg) no-repeat center/cover;
 }
 
-.header-text-2 {
-  padding-top: 9rem;
-}
-
 .header-text {
-  margin-top: 9rem;
+  margin-top: 12rem;
 }
-
-/* .position-helper {
-  position: relative;
-  width: auto;
-  height: auto;
-} */
 
 .fa-leaf {
   position: absolute;
   bottom: 306px;
-  right: 47%;
-  width: 200px;
+  right: 38%;
+  width: 73%;
   height: 100px;
 }
 
@@ -92,25 +82,11 @@ h4 {
   font-size: 3.5rem;
 }
 
-
-/* @media screen and (max-width: 1104px) {
-    h4 {
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 954px) {
-    h4 {
-    font-size: 2.9rem;
-  }
-} */
-
-
 .no-display {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .hero-container {
   height: 50vh;
 }
