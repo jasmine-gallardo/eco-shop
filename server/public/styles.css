@@ -80,7 +80,7 @@ h4 {
 
 .cart-summary-drawer {
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   padding: 1rem 0 0 0;
   z-index: 2;
