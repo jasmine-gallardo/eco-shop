@@ -200,6 +200,14 @@ h4 {
   .modal-container {
     padding: 1rem;
   }
+
+  .cart-text {
+    font-size: .9rem;
+  }
+
+  .cart-drawer-2 {
+    height: 6%;
+  }
 }
 
 /* iPad Pro */
