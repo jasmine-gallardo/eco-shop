@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CartSummaryItem(props) {
   return (
-    <div className="cart-summary-item card d-flex">
+    <div className="cart-summary-item card d-flex mr-auto">
       <div className="cart-summary-item-2 border-bottom">
         <div className="text-left cart-item-text">
           <p className="mb-0 font-weight-bold">{props.name}</p>
