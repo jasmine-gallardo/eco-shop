@@ -12,12 +12,12 @@ export default function CartSummaryItem(props) {
           <img className="card-img" src={props.image}/>
         </div>
       </div>
-      <div className="">
+      {/* <div className="">
         <div className="cart-edit-text row text-center m-0 py-2">
-          <p className="mb-0 col-6 border-right-0 p-0">Edit</p>
-          <p className="mb-0 col-6 border-left p-0">Remove</p>
+          <p className="clickable mb-0 col-6 border-right-0 p-0">Edit</p>
+          <p className="clickable mb-0 col-6 border-left p-0">Remove</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
