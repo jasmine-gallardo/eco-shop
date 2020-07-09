@@ -32,6 +32,8 @@ export default class App extends React.Component {
     const cartIcon = document.querySelector('.cart-summary-drawer');
     cartIcon.classList.remove('no-display');
     cartIcon.classList.add('shadow-lg');
+    const cartModal = document.querySelector('.cart-click-away');
+    cartModal.classList.remove('d-none');
   }
 
   getCartItems() {
