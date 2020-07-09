@@ -20,9 +20,9 @@ export default class DisclaimerModal extends React.Component {
     }
     return (
       <div className="modal-bg align-items-center">
-        <div className="modal-container col-11 col-lg-6">
+        <div className="modal-container col-10 col-lg-6">
           <h2 className="mb-3">This site is for demonstrational purposes only.</h2>
-          <p className="lead mb-4">By clicking &quot;I Understand&quot; I acknowledge that I cannot make real purchases and should not use my personal or financial information including my real name, address, or credit card information.</p>
+          <p className="lead mb-4">By clicking &quot;I Understand&quot; I acknowledge that I cannot make real purchases and should not use my personal or financial information.</p>
           <div className="text-center">
             <button onClick={() => this.toggleButton()} className="btn btn-danger">I Understand</button>
           </div>
