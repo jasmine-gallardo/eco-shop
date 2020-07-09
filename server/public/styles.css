@@ -41,14 +41,14 @@ div > img {
   z-index: 1;
   position: absolute;
   display: flex;
-  background-color: rgba(0, 0, 0, 0.192);
+  background-color: rgba(255, 251, 251, 0.452);
   color: white;
 }
 
 .modal-container {
   margin: auto;
   padding: 3rem;
-  background-color: rgba(0, 0, 0, 0.575);
+  background-color: rgba(0, 0, 0, 0.836);
 }
 
 /* Header */
