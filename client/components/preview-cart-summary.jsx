@@ -36,7 +36,7 @@ export default class PreviewCartSummary extends React.Component {
           <p className="col-11 text-right">{this.props.cart.length} items </p>
         </div>
         <div className="cart-drawer-content">
-          <div className="cart-drawer-3">
+          <div className="cart-drawer-3 justify-content-center">
             {
               this.props.cart.map(item => {
                 return (
