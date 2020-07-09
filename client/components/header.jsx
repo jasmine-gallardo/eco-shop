@@ -11,7 +11,7 @@ export default class Header extends React.Component {
         <DisclaimerModal />
         <div className="header-container">
           <div className="cart-click-away d-none"></div>
-          <PreviewCartSummary cart={this.props.cart} setView={this.props.setView}/>
+          <PreviewCartSummary cart={this.props.cart} setView={this.props.setView} closeCart={this.props.closeCart}/>
           <header className="row py-3 px-3 bg-light text-dark ">
             <div className="clickable cart-items col-3 p-0 col-md-2 d-flex align-items-center justify-content-center">
               {/* <i class="fas fa-bars fa-1x"></i> */}
