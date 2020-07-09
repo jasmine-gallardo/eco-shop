@@ -8,12 +8,6 @@ html, body {
   height: 100%;
 }
 
-.card-img-top,
-.cart-item-img {
-  height: 10rem;
-  object-fit: contain;
-}
-
 div > img {
   width: 15rem;
   object-fit: contain;
@@ -82,24 +76,58 @@ h4 {
   font-size: 3.5rem;
 }
 
-.item-added {
+.cart-summary-drawer {
   position: absolute;
   width: 100%;
   height: 100vh;
-  padding: 1rem;
+  padding: 1rem .3rem 0 .3rem;
   z-index: 2;
-  right: -0.5%;
+  right: 1.1%;
   background-color: rgb(245, 247, 248);
   transition: all 1s;
+  overflow-y: scroll;
 }
 
-.item-added-2 {
+.cart-drawer-2 {
   height: 5%;
+  margin-bottom: 1rem;
+}
+
+.cart-drawer-3 {
+  box-sizing: border-box;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+}
+
+.cart-drawer-content {
+  height: 100%;
+}
+
+.cart-summary-item {
+  width: 45%;
+  height: 284px;
+  margin: .5rem;
+  padding: .3rem 0;
+}
+.cart-summary-item-2 {
+  width: 100%;
+  height: 100%;
+  padding: 0 .5rem 0 .5rem;
+}
+
+.cart-item-text {
+  font-size: 14px;
+}
+
+.cart-edit-text {
+  font-size: 12px;
 }
 
 @media screen and (min-width: 768px) {
-  .item-added {
-    width: 376px;
+  .cart-summary-drawer {
+    width: 400px;
   }
 
   .no-display {
