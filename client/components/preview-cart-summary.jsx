@@ -11,6 +11,8 @@ export default class PreviewCartSummary extends React.Component {
     const cartPreview = document.querySelector('.cart-summary-drawer');
     cartPreview.classList.add('no-display');
     cartPreview.classList.remove('shadow-lg');
+    const cartModal = document.querySelector('.cart-click-away');
+    cartModal.classList.add('d-none');
   }
 
   render() {
