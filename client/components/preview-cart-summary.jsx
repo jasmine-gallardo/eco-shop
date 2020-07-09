@@ -10,12 +10,13 @@ export default class PreviewCartSummary extends React.Component {
   closeCart() {
     const cartPreview = document.querySelector('.cart-summary-drawer');
     cartPreview.classList.add('no-display');
+    cartPreview.classList.remove('shadow-lg');
   }
 
   render() {
     if (this.props.cart.length === 0) {
       return (
-        <div className="cart-summary-drawer text-center row shadow-lg justify-content-center no-display">
+        <div className="cart-summary-drawer text-center row justify-content-center no-display">
           <div className="cart-drawer-2 border-bottom row d-flex col-12">
             <i onClick={() => this.closeCart()} className="clickable far fa-times-circle col-1 p-0"></i>
             <p className="col-11 text-right">{this.props.cart.length} items </p>
