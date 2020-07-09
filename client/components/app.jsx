@@ -45,7 +45,7 @@ export default class App extends React.Component {
       .then(newCartItem => {
         const allCartItemsArray = this.state.cart.concat(newCartItem);
         this.setState({ cart: allCartItemsArray });
-        const cartIcon = document.querySelector('.item-added');
+        const cartIcon = document.querySelector('.cart-summary-drawer');
         cartIcon.classList.remove('no-display');
       })
       .catch(err => console.error(err));
@@ -85,7 +85,7 @@ export default class App extends React.Component {
     }
     return (
       <div>
-        <Header cartItemCount={this.state.cart.length} setView={this.setView} />
+        <Header cart={this.state.cart} setView={this.setView}/>
         <div>
           <div className="row justify-content-center">
             {view}
