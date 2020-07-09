@@ -31,7 +31,7 @@ export default class PreviewCartSummary extends React.Component {
     const itemTotalReduce = cartArrayCopy.reduce((acc, curr) => acc + curr);
     const itemTotal = (itemTotalReduce / 100).toFixed(2);
     return (
-      <div className="cart-summary-drawer text-center row shadow-lg justify-content-center no-display">
+      <div className="cart-summary-drawer text-center row justify-content-center no-display">
         <div className="cart-drawer-2 border-bottom row d-flex col-12 shadow-sm">
           <i onClick={() => this.closeCart()} className="clickable far fa-times-circle col-1 p-0"></i>
           <p className="col-11 text-right">{this.props.cart.length} items </p>
@@ -52,7 +52,7 @@ export default class PreviewCartSummary extends React.Component {
               })
             }
           </div>
-          <div className="checkout-section px-4 py-3 shadow-sm">
+          <div className="checkout-section px-4 py-3">
             <p className="font-weight-bold">Estimated Total</p>
             <p className="font-weight-bold pr-1">${itemTotal}</p>
             <button onClick={() => { this.closeCart(); this.props.setView('checkout', {}); }} className="btn btn-block btn-dark mb-3">Checkout</button>
