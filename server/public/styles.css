@@ -76,13 +76,15 @@ h4 {
   font-size: 3.5rem;
 }
 
+/* Cart Drawer */
+
 .cart-summary-drawer {
+  box-sizing: border-box;
   position: absolute;
-  width: 100%;
   height: 100vh;
   padding: 1rem 0 0 0;
   z-index: 2;
-  right: 1.1%;
+  right: 15px;
   background-color: rgb(245, 247, 248);
   transition: all 1s;
   overflow-y: scroll;
@@ -95,19 +97,19 @@ h4 {
 
 .cart-drawer-3 {
   box-sizing: border-box;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-content: start;
 }
 
 .cart-drawer-content {
-  height: 93%;
+  height: 100%;
+  width: 100%;
 }
 
 .cart-summary-item {
   width: 45%;
-  height: 284px;
   margin: .5rem;
   padding: .3rem 0;
 }
@@ -130,20 +132,31 @@ h4 {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #FFFFFF;
+  position: sticky;
+  bottom: 0;
 }
 
 .disclaimer-text {
   font-size: 11px;
 }
 
+.no-display {
+  transform: translate(100%);
+  transition: all .5s;
+}
+
+
+/* Responsiveness */
+
+@media screen and (max-width: 768px) {
+  .cart-summary-drawer {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .cart-summary-drawer {
     width: 400px;
-  }
-
-  .no-display {
-    transform: translate(100%);
-    transition: all .5s;
   }
 }
 
@@ -180,10 +193,23 @@ h4 {
     font-size: 1rem;
   }
 }
+
 /* iPhone 5 */
 
 @media screen and (max-width: 320px) {
   .modal-container {
     padding: 1rem;
+  }
+}
+
+/* iPad Pro */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .cart-drawer-3 {
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+  .cart-drawer-2 {
+    height: 3%;
   }
 }
