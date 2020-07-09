@@ -4,13 +4,13 @@ import PreviewCartSummary from './preview-cart-summary';
 
 export default class Header extends React.Component {
   render() {
-    const cartItemCount = this.props.cartItemCount;
+    const cartItemCount = this.props.cart.length;
     const setView = this.props.setView;
     return (
       <div>
         <DisclaimerModal />
         <div className="header-container">
-          <PreviewCartSummary cartItemCount={cartItemCount}/>
+          <PreviewCartSummary cart={this.props.cart}/>
           <header className="row py-3 px-3 bg-light text-dark ">
             <div className="clickable cart-items col-3 p-0 col-md-2 d-flex align-items-center justify-content-center">
               {/* <i class="fas fa-bars fa-1x"></i> */}
