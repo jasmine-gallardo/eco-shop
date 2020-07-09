@@ -34,7 +34,7 @@ export default class PreviewCartSummary extends React.Component {
       <div className="cart-summary-drawer text-center row justify-content-center no-display">
         <div className="cart-drawer-2 border-bottom row d-flex col-12 shadow-sm">
           <i onClick={() => this.closeCart()} className="clickable far fa-times-circle col-1 p-0"></i>
-          <p className="col-11 text-right">{this.props.cart.length} items </p>
+          <p className="col-11 text-right typeface-1 font-weight-bold">{this.props.cart.length} items </p>
         </div>
         <div className="cart-drawer-content">
           <div className="cart-drawer-3 justify-content-center">
