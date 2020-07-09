@@ -51,7 +51,7 @@ export default class PreviewCartSummary extends React.Component {
               })
             }
           </div>
-          <div className="checkout-section my-2 px-4 py-3 shadow-sm">
+          <div className="checkout-section px-4 py-3 shadow-sm">
             <p className="font-weight-bold">Estimated Total</p>
             <p className="font-weight-bold pr-1">${itemTotal}</p>
             <button onClick={() => { this.closeCart(); this.props.setView('checkout', {}); }} className="btn btn-block btn-dark mb-3">Checkout</button>
