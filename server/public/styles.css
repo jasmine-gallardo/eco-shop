@@ -203,7 +203,7 @@ h4 {
 }
 
 /* iPad Pro */
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (max-width: 1024px) {
   .cart-drawer-3 {
   height: auto;
   margin-bottom: 1rem;
