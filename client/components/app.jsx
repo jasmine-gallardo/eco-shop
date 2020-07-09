@@ -15,6 +15,7 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.openCartDrawer = this.openCartDrawer.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +26,11 @@ export default class App extends React.Component {
     this.setState({
       view: { name, params }
     });
+  }
+
+  openCartDrawer() {
+    const cartIcon = document.querySelector('.cart-summary-drawer');
+    cartIcon.classList.remove('no-display');
   }
 
   getCartItems() {
@@ -45,10 +51,9 @@ export default class App extends React.Component {
       .then(newCartItem => {
         const allCartItemsArray = this.state.cart.concat(newCartItem);
         this.setState({ cart: allCartItemsArray });
-        const cartIcon = document.querySelector('.cart-summary-drawer');
-        cartIcon.classList.remove('no-display');
       })
       .catch(err => console.error(err));
+    this.openCartDrawer();
   }
 
   placeOrder(newOrder) {
@@ -85,7 +90,7 @@ export default class App extends React.Component {
     }
     return (
       <div>
-        <Header cart={this.state.cart} setView={this.setView}/>
+        <Header cart={this.state.cart} setView={this.setView} openCartDrawer={this.openCartDrawer}/>
         <div>
           <div className="row justify-content-center">
             {view}
