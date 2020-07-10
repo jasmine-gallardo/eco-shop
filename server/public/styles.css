@@ -85,7 +85,7 @@ h4 {
 .cart-summary-drawer {
   box-sizing: border-box;
   position: fixed;
-  height: 100vh;
+  height: 100%;
   padding: 1rem 0 0 0;
   z-index: 2;
   right: 15px;
@@ -101,7 +101,7 @@ h4 {
 
 .cart-drawer-3 {
   box-sizing: border-box;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   align-content: start;
@@ -114,6 +114,7 @@ h4 {
 
 .cart-summary-item {
   width: 45%;
+  height: auto;
   margin: .5rem;
   padding: .3rem 0;
 }

@@ -41,12 +41,12 @@ export default class PreviewCartSummary extends React.Component {
               })
             }
           </div>
-          <div className="checkout-section px-4 py-3">
-            <p className="font-weight-bold">Estimated Total</p>
-            <p className="font-weight-bold pr-1">${itemTotal}</p>
-            <button onClick={() => { this.props.closeCart(); this.props.setView('checkout', {}); }} className="btn btn-block btn-dark mb-3">Checkout</button>
-            <p className="text-left disclaimer-text">Reminder: This site is not a real shop, it&apos;s a project. Do not use your real information when &quot;checking out&quot;.</p>
-          </div>
+        </div>
+        <div className="checkout-section px-4 py-3">
+          <p className="font-weight-bold">Estimated Total</p>
+          <p className="font-weight-bold pr-1">${itemTotal}</p>
+          <button onClick={() => { this.props.closeCart(); this.props.setView('checkout', {}); }} className="btn btn-block btn-dark mb-3">Checkout</button>
+          <p className="text-left disclaimer-text">Reminder: This site is not a real shop, it&apos;s a project. Do not use your real information when &quot;checking out&quot;.</p>
         </div>
       </div>
     );
