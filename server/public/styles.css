@@ -82,11 +82,11 @@ h4 {
 
 /* Cart Drawer */
 
-.cart-summary-drawer {
+.cart-summary-drawer { //WATCH
   box-sizing: border-box;
   position: fixed;
   height: 100%;
-  padding: 1rem 0 0 0;
+  /* padding: 1rem 0 0 0; */
   z-index: 2;
   right: 15px;
   background-color: rgb(245, 247, 248);
@@ -95,8 +95,14 @@ h4 {
 }
 
 .cart-drawer-2 {
-  height: 5%;
+  /* box-sizing: border-box; */
+  height: 7.4%;
   margin-bottom: 1rem;
+  padding: 1rem 0 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #ffff;
 }
 
 .cart-drawer-3 {
@@ -222,7 +228,15 @@ h4 {
   }
 
   .cart-drawer-2 {
-    height: 6%;
+    height: 9%;
+  }
+}
+
+/* iPad */
+
+@media only screen and (min-width: 768px) and (max-width: 768px) {
+  .cart-drawer-2 {
+    height: 5%;
   }
 }
 
@@ -235,6 +249,6 @@ h4 {
 }
 
   .cart-drawer-2 {
-    height: 3%;
+    height: 4%;
   }
 }
