@@ -93,7 +93,7 @@ h4 {
 }
 
 .cart-drawer-2 {
-  height: 7.4%;
+  height: 48px;
   padding: 1rem 0 0 0;
   position: sticky;
   top: 0;
@@ -202,10 +202,30 @@ h4 {
   }
 }
 
-/* Galaxy S5, MotoG4 */
-  @media only screen and (min-width: 360px) and (max-width: 640px) {
+@media screen and (max-width: 800px) and (max-height: 600px) {
+  .cart-drawer-content {
+      height: 66%;
+    }
+}
+
+/* iPhone 6,7,8 Plus*/
+  @media only screen and (max-width: 414px) and (max-height: 736px) {
     .cart-drawer-content {
       height: 69%;
+    }
+}
+
+/* iPhone 6,7,8 */
+  @media only screen and (min-width: 375px) and (max-height: 667px) {
+    .cart-drawer-content {
+      height: 69%;
+    }
+    .eco-shop-text {
+      font-size: 1.3rem;
+    }
+
+    .cart-text {
+     font-size: .9rem;
     }
 }
 
@@ -237,44 +257,11 @@ h4 {
   }
 }
 
-/* iPhone 6,7,8 */
-  @media only screen and (min-width: 375px) and (max-width: 667px) {
-    .cart-drawer-content {
-      height: 69%;
-    }
-}
-
-/* iPhone X and iPhone 6,7,8 Plus*/
-  @media only screen and (min-width: 375px) and (max-width: 375px) {
-    .cart-drawer-content {
-      height: 72%;
-    }
-}
-
-/* iPad */
-
-@media only screen and (min-width: 768px) and (max-width: 768px) {
-  .cart-drawer-2 {
-    height: 5%;
-  }
-  .cart-drawer-content {
-    height: 78%;
-  }
-}
-
 /* iPad Pro */
 
 @media only screen and (min-width: 1024px) and (max-width: 1024px) {
   .cart-drawer-3 {
-  height: auto;
-  margin-bottom: 1.5rem;
-}
-
-  .cart-drawer-2 {
-    height: 4%;
-  }
-
-  .cart-drawer-content {
-    height: 83%;
+    height: auto;
+    margin-bottom: 1.5rem;
   }
 }
