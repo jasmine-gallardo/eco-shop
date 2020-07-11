@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
-import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
 
 export default class App extends React.Component {
@@ -10,13 +9,18 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       view: { name: 'catalog', params: {} },
-      cart: []
+      cart: [],
+      cartIsOpen: {
+        value: false,
+        bootstrapClass: { display: 'd-none', shadow: '' },
+        customClass: 'no-display'
+      }
     };
     this.setView = this.setView.bind(this);
+    this.closeCart = this.closeCart.bind(this);
+    this.openCart = this.openCart.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
-    this.openCartDrawer = this.openCartDrawer.bind(this);
-    this.closeCart = this.closeCart.bind(this);
   }
 
   componentDidMount() {
@@ -29,21 +33,24 @@ export default class App extends React.Component {
     });
   }
 
-  openCartDrawer() {
-    const cartIcon = document.querySelector('.cart-summary-drawer');
-    cartIcon.classList.remove('no-display');
-    cartIcon.classList.add('shadow-lg');
-    const cartModal = document.querySelector('.cart-click-away');
-    cartModal.classList.remove('d-none');
-    cartModal.addEventListener('click', () => this.closeCart());
+  openCart() {
+    this.setState({
+      cartIsOpen: {
+        value: true,
+        bootstrapClass: { display: '', shadow: 'shadow-lg' },
+        customClass: ''
+      }
+    });
   }
 
   closeCart() {
-    const cartPreview = document.querySelector('.cart-summary-drawer');
-    cartPreview.classList.add('no-display');
-    cartPreview.classList.remove('shadow-lg');
-    const cartModal = document.querySelector('.cart-click-away');
-    cartModal.classList.add('d-none');
+    this.setState({
+      cartIsOpen: {
+        value: false,
+        bootstrapClass: { display: 'd-none', shadow: '' },
+        customClass: 'no-display'
+      }
+    });
   }
 
   getCartItems() {
@@ -64,9 +71,9 @@ export default class App extends React.Component {
       .then(newCartItem => {
         const allCartItemsArray = this.state.cart.concat(newCartItem);
         this.setState({ cart: allCartItemsArray });
+        this.openCart();
       })
       .catch(err => console.error(err));
-    this.openCartDrawer();
   }
 
   placeOrder(newOrder) {
@@ -89,21 +96,18 @@ export default class App extends React.Component {
     let view;
     switch (this.state.view.name) {
       case 'catalog': view =
-        <ProductList view={this.state.view} setViewProp={this.setView} />;
+        <ProductList view={this.state.view} setViewProp={this.setView}/>;
         break;
       case 'details': view =
         <ProductDetails
-          params={this.state.view.params} setViewProp={this.setView} addToCart={this.addToCart} />;
-        break;
-      case 'cart': view =
-        <CartSummary cart={this.state.cart} setView={this.setView} />;
+          params={this.state.view.params} setViewProp={this.setView} addToCart={this.addToCart}/>;
         break;
       case 'checkout': view =
         <CheckoutForm cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView}/>;
     }
     return (
       <div>
-        <Header cart={this.state.cart} setView={this.setView} openCartDrawer={this.openCartDrawer} closeCart={this.closeCart}/>
+        <Header cart={this.state.cart} setView={this.setView} openCart={this.openCart} closeCart={this.closeCart} cartDisplayStyles={this.state.cartIsOpen}/>
         <div>
           <div className="row justify-content-center">
             {view}
