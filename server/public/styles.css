@@ -82,11 +82,10 @@ h4 {
 
 /* Cart Drawer */
 
-.cart-summary-drawer { //WATCH
+.cart-summary-drawer {
   box-sizing: border-box;
   position: fixed;
   height: 100%;
-  /* padding: 1rem 0 0 0; */
   z-index: 2;
   right: 15px;
   background-color: rgb(245, 247, 248);
@@ -95,7 +94,6 @@ h4 {
 }
 
 .cart-drawer-2 {
-  /* box-sizing: border-box; */
   height: 7.4%;
   margin-bottom: 1rem;
   padding: 1rem 0 0 0;
