@@ -13,8 +13,8 @@ export default class PreviewCartSummary extends React.Component {
           <div onClick={() => this.props.closeCart()} className={`cart-click-away ${bootstrapDisplay}`}></div>
           <div className={`cart-summary-drawer text-center row justify-content-center ${customDisplay} ${bootstrapShadow}`}>
             <div className="cart-drawer-2 border-bottom row d-flex col-12">
-              <i onClick={() => this.props.closeCart()} className="clickable far fa-times-circle col-1 p-0"></i>
-              <p className="col-11 text-right">{this.props.cart.length} items </p>
+              <i onClick={() => this.props.closeCart()} className="clickable far fa-times-circle col-1 pl-3 pr-0"></i>
+              <p className="col-11 text-right typeface-1 font-weight-bold mb-0">{this.props.cart.length} items </p>
             </div>
             <div className="container text-center">
               <p>There are no items in your cart.</p>
@@ -31,8 +31,8 @@ export default class PreviewCartSummary extends React.Component {
         <div onClick={() => this.props.closeCart()} className={`cart-click-away ${bootstrapDisplay}`}></div>
         <div className={`cart-summary-drawer text-center row justify-content-center ${customDisplay} ${bootstrapShadow}`}>
           <div className="cart-drawer-2 border-bottom row d-flex col-12 shadow-sm">
-            <i onClick={() => this.props.closeCart()} className="clickable far fa-times-circle col-1 p-0"></i>
-            <p className="col-11 text-right typeface-1 font-weight-bold">{this.props.cart.length} items </p>
+            <i onClick={() => this.props.closeCart()} className="clickable far fa-times-circle col-1 pl-3 pr-0"></i>
+            <p className="col-11 text-right typeface-1 font-weight-bold mb-0">{this.props.cart.length} items </p>
           </div>
           <div className="cart-drawer-content">
             <div className="cart-drawer-3 justify-content-center">
@@ -51,7 +51,7 @@ export default class PreviewCartSummary extends React.Component {
               }
             </div>
           </div>
-          <div className="checkout-section px-4 py-3">
+          <div className="checkout-section px-4 pt-3">
             <p className="font-weight-bold">Estimated Total</p>
             <p className="font-weight-bold pr-1">${itemTotal}</p>
             <button onClick={() => { this.props.closeCart(); this.props.setView('checkout', {}); }} className="btn btn-block btn-dark mb-3">Checkout</button>
