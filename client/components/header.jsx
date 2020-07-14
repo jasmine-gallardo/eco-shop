@@ -18,8 +18,8 @@ export default class Header extends React.Component {
             <div className="clickable cart-items col-3 p-0 col-md-2 d-flex align-items-center justify-content-center">
               {/* <i class="fas fa-bars fa-1x"></i> */}
             </div>
-            <div className="brand-name col-5 justify-content-center m-auto d-flex clickable center" onClick={() => setView('catalog', {})}>
-              <p className="mb-0 typeface-1 font-weight-bold eco-shop-text">Eco Shop</p>
+            <div className="brand-name col-5 justify-content-center m-auto d-flex center" onClick={() => setView('catalog', {})}>
+              <p className="mb-0 clickable typeface-1 font-weight-bold eco-shop-text">Eco Shop</p>
             </div>
             <div className="clickable cart-items col-3 pl-0 pr-2 col-md-2 d-flex align-items-center justify-content-center"
               onClick={() => this.props.openCart()}>
