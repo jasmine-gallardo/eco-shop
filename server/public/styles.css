@@ -1,5 +1,5 @@
 html, body {
-  max-width: 1395px;
+  /* max-width: 1395px; */
   height: 100%;
   overflow-x: hidden;
 }
@@ -219,7 +219,7 @@ h4 {
 /* iPhone 6,7,8 */
   @media only screen and (min-width: 375px) and (max-height: 667px) {
     .cart-drawer-content {
-      height: 69%;
+      height: 64%;
     }
     .eco-shop-text {
       font-size: 1.3rem;

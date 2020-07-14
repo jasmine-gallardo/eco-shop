@@ -109,7 +109,7 @@ export default class App extends React.Component {
       <div>
         <Header cart={this.state.cart} setView={this.setView} openCart={this.openCart} closeCart={this.closeCart} cartDisplayStyles={this.state.cartIsOpen}/>
         <div>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center viewport-wrapper">
             {view}
           </div>
         </div>
