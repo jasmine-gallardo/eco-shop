@@ -4,15 +4,15 @@
   "description": "Reference implemenation of a Node.js &amp; React shopping cart app.",
   "main": "server/index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
+    "start": "NODE_ENV=production node server/index.js",
     "dev": "npm-run-all --silent --parallel dev:*",
     "dev:client": "webpack-dev-server",
     "dev:server": "nodemon server/index.js",
     "db:import": "source .env; psql $DATABASE_URL < database/dump.sql",
     "db:export": "source .env; pg_dump -c -O $DATABASE_URL > database/dump.sql",
-    "build": "webpack --mode=production",
-    "start": "NODE_ENV=production node server/index.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "build": "webpack --mode=production"
   },
   "nodemonConfig": {
     "watch": [
@@ -117,5 +117,5 @@
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.10.1"
   },
-  "homepage": "."
+  "homepage": "http://jasmine-gallardo.github.io/eco-shop"
 }
