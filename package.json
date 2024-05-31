@@ -117,5 +117,5 @@
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.10.1"
   },
-  "homepage": "http://jasmine-gallardo.github.io/eco-shop"
+  "homepage": "."
 }
