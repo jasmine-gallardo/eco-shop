@@ -12,6 +12,10 @@
     "db:export": "source .env; pg_dump -c -O $DATABASE_URL > database/dump.sql",
     "build": "webpack --mode=production"
   },
+  "engines": {
+    "npm": ">=6.0.0 <9.0.0",
+    "node": ">=11.0.0"
+  },
   "nodemonConfig": {
     "watch": [
       "server/"
