@@ -12,7 +12,7 @@
     "build": "webpack --mode=production",
     "start": "NODE_ENV=production node server/index.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "nodemonConfig": {
     "watch": [
